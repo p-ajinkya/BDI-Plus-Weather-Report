@@ -13,9 +13,17 @@ export class WeatherComponent {
   public weatherData: any = null;
   public currentDate = new Date();
   ngOnInit() {
+    console.log(this.weatherData)
     this.weatherSearchForm = this.formBuilder.group({
       location: ['']
     });
+  }
+
+  getCurrentDate(){
+    setInterval(()=>{
+      this.currentDate = new Date();
+    }, 1000)
+    return this.currentDate;
   }
 
   sendToAPIXU(formValues: any) {
