@@ -14,8 +14,8 @@ export class WeatherService {
 
   getWeather(location: any){
     const headers = new HttpHeaders({
-      'X-RapidAPI-Key': '30933df99cmsh59d9d2d4c91c622p1abfcfjsn7d801e02eadc',
-      'X-RapidAPI-Host': 'openweather43.p.rapidapi.com'
+      'X-RapidAPI-Key': '5d2977aaa5msh90b86e9b16948fap11ae74jsned0a57b77e53',
+    'X-RapidAPI-Host': 'openweather43.p.rapidapi.com'
     });
     let url = `${this.BASE_URL}?key=${this.App_ID}&q=${location}`
       return this.http.get(
