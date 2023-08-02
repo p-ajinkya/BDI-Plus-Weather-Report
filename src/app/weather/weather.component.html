@@ -27,6 +27,12 @@
     </div>
    
   </div>
+  <div class="p-4">
+    <div class="row justify-content-center text-white error-msg" *ngIf="error" >
+      <h6>{{error?.cod}}</h6>
+      <h6>{{error?.message | uppercase}}</h6>
+    </div>
+  </div>
   <div class="row justify-content-center " *ngIf="weatherData" >
     <div class="col-md-12">
       <h3 class="text-center my-4 text-white">Weather Details:</h3>
@@ -52,10 +58,12 @@
                     <span> {{weatherData?.wind?.speed*10}} km/h </span>
                   </p>
 
-                  <p class="my-1">
+                  <!-- <p class="my-1">
                     <i class="fa fa-tint mr-2" aria-hidden="true"></i>
-                    <span> 84% </span>
-                  </p>
+                    <span> {{weatherData?.sys?.sunrise | date:'hh:mm a'}} </span>
+                    <span> {{weatherData?.sys?.sunset | date:'hh:mm a'}} </span>
+
+                  </p> -->
 
                   
                 </div>
