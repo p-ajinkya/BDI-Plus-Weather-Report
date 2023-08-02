@@ -42,12 +42,12 @@
             <div class="card p-4">
               <div class="d-flex">
                 <h6 class="flex-grow-1">{{weatherData?.name}}</h6>
-                <h6>{{getCurrentDate() | date:'medium'}}</h6>
+                <h6> {{currentDay?.name}}, {{getCurrentDate() | date:'hh:mm:ss a'}}</h6>
               </div>
 
               <div class="d-flex flex-column temp mt-5 mb-3">
                 <h1 class="mb-0 font-weight-bold" id="heading">{{weatherData?.main?.temp | fahrenheitToCelsius}}&deg; C</h1>
-                <span class="small grey">{{weatherData?.weather[0]?.main}}</span>
+                <span class="small grey">{{weatherData?.weather[0]?.main}} {{weatherData?.main?.humidity}}% Humidity</span>
               </div>
 
               <div class="d-flex">
@@ -57,14 +57,18 @@
 
                     <span> {{weatherData?.wind?.speed*10}} km/h </span>
                   </p>
+                  <p class="my-1">
+                    <img src="./../../assets/sunrise.png" height="17px" />
 
-                  <!-- <p class="my-1">
-                    <i class="fa fa-tint mr-2" aria-hidden="true"></i>
                     <span> {{weatherData?.sys?.sunrise | date:'hh:mm a'}} </span>
+
+                  </p>
+                  <p class="my-1">
+                    <img src="./../../assets/sunset.png" height="17px" />
+
                     <span> {{weatherData?.sys?.sunset | date:'hh:mm a'}} </span>
 
-                  </p> -->
-
+                  </p>
                   
                 </div>
 

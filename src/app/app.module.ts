@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { WeatherService } from './weather.service';
 import { FahrenheitToCelsiusPipe } from './fahrenheit-to-celsius.pipe';
+import { IconsModule } from './icons/icons.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { FahrenheitToCelsiusPipe } from './fahrenheit-to-celsius.pipe';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    IconsModule
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]
