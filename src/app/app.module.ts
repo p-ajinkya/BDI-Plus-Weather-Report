@@ -9,11 +9,23 @@ import { HttpClientModule } from "@angular/common/http";
 import { WeatherService } from './weather.service';
 import { FahrenheitToCelsiusPipe } from './fahrenheit-to-celsius.pipe';
 import { IconsModule } from './icons/icons.module';
+
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
+import { TimestampToTimePipe } from './timeStamp.pipe';
+
+// Note we need a separate function as it's required
+// by the AOT compiler.
+export function playerFactory() {
+  return player;
+}
+
 @NgModule({
   declarations: [
     AppComponent,
     WeatherComponent,
-    FahrenheitToCelsiusPipe
+    FahrenheitToCelsiusPipe,
+    TimestampToTimePipe
   ],
   imports: [
     BrowserModule,
@@ -21,7 +33,8 @@ import { IconsModule } from './icons/icons.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    IconsModule
+    IconsModule,
+    LottieModule
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]

@@ -1,0 +1,15 @@
+.bg-img{
+  background-image: url('../../assets/cloud-blue-sky.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+.bg-night{
+    background-image: url('../../assets/night.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-color: black;
+    color: #fff;
+  }
