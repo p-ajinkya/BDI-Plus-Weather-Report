@@ -36,15 +36,12 @@
           <div class="col-12 col-md-8 col-sm-12 col-xs-12">
             <div
               class="card p-4"
-              [ngClass]="{
-                'bg-img': getDayorNight() === 'sunny',
-                'bg-night': getDayorNight() === 'nighticon'
-              }"
+              [ngClass]="getDayorNight() ? 'bg-img' : 'bg-night'"
             >
               <div class="d-flex">
                 <h4 class="flex-grow-1">{{ weatherData?.name }}</h4>
                 <h6>
-                  {{ currentDay?.name }},
+                  {{ getDay()?.name}},
                   {{ weatherData?.dt | timestampToTime }}
                   <i-feather
                     (click)="sendToAPIXU(weatherSearchForm.value)"
@@ -101,14 +98,14 @@
 
                 <div>
                   <ng-lottie
-                    *ngIf="getDayorNight() === 'sunny'"
+                    *ngIf="getDayorNight()"
                     width="100px"
                     height="100px"
                     containerClass="moving-box"
                     [options]="lottieConfig"
                   ></ng-lottie>
                   <ng-lottie
-                    *ngIf="getDayorNight() === 'nighticon'"
+                    *ngIf="!getDayorNight()"
                     width="100px"
                     height="100px"
                     containerClass="moving-box"

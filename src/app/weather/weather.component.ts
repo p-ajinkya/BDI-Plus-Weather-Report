@@ -54,16 +54,12 @@ export class WeatherComponent {
     });
   }
 
-  getCurrentDate() {
-    let dayId = this.currentDate.getDay();
-    // console.log(dayId)
-    this.currentDay = daysArray.find((e) => e['id'] === dayId);
-    console.log(this.currentDay);
-    // setInterval(()=>{
-    this.currentDate = new Date();
-    // }, 1000)
-    return this.currentDate;
+  getDay(){
+    const date: any = new Date(this.weatherData?.dt).getDay();
+    this.currentDay = daysArray.find((e) => e['id'] === date);
+    return this.currentDay;
   }
+  
 
   sendToAPIXU(formValues: any) {
     this.weatherData = null;
@@ -71,7 +67,6 @@ export class WeatherComponent {
     this.weatherService.getWeather(formValues.location).subscribe(
       (data) => {
         this.weatherData = data;
-        console.log('Day : ', this.getDayorNight());
       },
       (error) => {
         console.log(' Error : ', error);
@@ -81,14 +76,15 @@ export class WeatherComponent {
   }
 
   getDayorNight() {
-    let currentTime = new Date().getTime();
-    if (
-      currentTime >= this.weatherData?.sys?.sunrise &&
-      currentTime < this.weatherData?.sys?.sunset
-    ) {
-      return 'sunny';
-    } else {
-      return 'nighticon';
+    const date = new Date(this.weatherData?.dt);
+    const hours = date.getHours();
+    // You can define the time range for day and night according to your location
+    // For example, consider 6 AM to 6 PM as day, and the rest as night
+    if(hours >= 5 && hours <= 19){
+      return true;
+    }else{
+      return false
     }
+
   }
 }
