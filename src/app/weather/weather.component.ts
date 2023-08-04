@@ -65,8 +65,15 @@ export class WeatherComponent {
     this.weatherData = null;
     this.error = null;
     this.weatherService.getWeather(formValues.location).subscribe(
+<<<<<<< Updated upstream
       (data) => {
         this.weatherData = data;
+=======
+      (data: any) => {
+        console.log(data)
+        this.weatherData = data['list'][0];
+        console.log('Day : ', this.getDayorNight());
+>>>>>>> Stashed changes
       },
       (error) => {
         console.log(' Error : ', error);
