@@ -13,3 +13,33 @@
     background-color: black;
     color: #fff;
   }
+
+  div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+  div.scrollmenu div {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 10px !important;
+    border-radius: 10px !important;
+    height: 100px;
+    width: 75px !important;
+  }
+  
+  div.scrollmenu div:hover {
+    background-color: #073688;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px !important; /* Change this value to your desired width */
+  }
+  
+  /* The scrollbar thumb (the draggable part) */
+  ::-webkit-scrollbar-thumb {
+    background-color: #0a1f44; /* Change the color of the thumb */
+    border-radius: 2px; /* Optional: Add some border-radius to style the thumb */
+  }

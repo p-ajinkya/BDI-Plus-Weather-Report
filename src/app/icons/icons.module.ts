@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FeatherModule } from 'angular-feather';
-import { Sunrise, Sunset, RefreshCw, Wind } from 'angular-feather/icons';
+import { Sunrise, Sunset, RefreshCw, Wind, CloudRain, Cloud } from 'angular-feather/icons';
 
 const icons = {
   Sunrise,
   Sunset,
   RefreshCw,
-  Wind
+  Wind,
+  CloudRain,
+  Cloud
 };
 
 @NgModule({

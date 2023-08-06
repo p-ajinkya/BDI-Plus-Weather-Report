@@ -13,6 +13,7 @@ import { IconsModule } from './icons/icons.module';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
 import { TimestampToTimePipe } from './timeStamp.pipe';
+import { SquareRootPipe } from './squareroot,pipe';
 
 // Note we need a separate function as it's required
 // by the AOT compiler.
@@ -25,7 +26,8 @@ export function playerFactory() {
     AppComponent,
     WeatherComponent,
     FahrenheitToCelsiusPipe,
-    TimestampToTimePipe
+    TimestampToTimePipe,
+    SquareRootPipe
   ],
   imports: [
     BrowserModule,
